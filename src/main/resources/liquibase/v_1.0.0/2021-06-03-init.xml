@@ -4,6 +4,28 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd">
     <changeSet id="20210603-001" author="timoshinmatvey@mail.ru">
-    
+        <createTable tableName="t_operation" remarks="Таблица операций">
+            <column name="id" type="BIGINT" remarks="Уникальный идентификатор операции">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_t_operation_id"/>
+            </column>
+            <column name="name" type="VARCHAR" remarks="Наименование операции">
+                <constraints nullable="false" />
+            </column>
+            <column name="type" type="VARCHAR" remarks="Тип операции">
+                <constraints nullable="false" />
+            </column>
+            <column name="category" type="VARCHAR" remarks="Категория операции">
+                <constraints nullable="false" />
+            </column>
+            <column name="sum" type="INTEGER" remarks="Сумма операции">
+                <constraints nullable="false" />
+            </column>
+            <column name="date" type="DATE" remarks="Дата операции (добавления в приложение)">
+                <constraints nullable="false" />
+            </column>
+            <column name="userId" type="UUID" remarks="Уникальный идентификатор пользователя">
+                <constraints nullable="false" unique="true"/>
+            </column>
+        </createTable>
     </changeSet>
 </databaseChangeLog>

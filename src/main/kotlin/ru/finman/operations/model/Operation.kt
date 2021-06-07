@@ -3,12 +3,12 @@ package ru.finman.operations.model
 import java.time.ZonedDateTime
 import javax.persistence.*
 
-@Entity("t_operations")
-@Table
+@Entity
+@Table(name = "t_operation")
 class Operation(
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "t_operations_seq")
-	@SequenceGenerator(name = "t_operations_seq", sequenceName = "t_operations_seq", allocationSize = 1)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "t_operation_seq")
+	@SequenceGenerator(name = "t_operation_seq", sequenceName = "t_operation_seq", allocationSize = 1)
 	val id: Long? = null,
 	@Column val name: String? = null,
 	@Column val type: EOperationType? = null,

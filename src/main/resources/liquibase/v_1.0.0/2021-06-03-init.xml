@@ -28,4 +28,26 @@
             </column>
         </createTable>
     </changeSet>
+    
+    <changeSet id="20210603-002" author="timoshinmatvey@mail.ru">
+        <createTable tableName="t_operation_type" remarks="Таблица типов операций">
+            <column name="id" type="BIGINT" remarks="Уникальный идентификатор типа операции">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_t_operation_type_id"/>
+            </column>
+            <column name="type" type="VARCHAR" remarks="Тип операции">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+    </changeSet>
+    
+    <changeSet id="20210603-003" author="timoshinmatvey@mail.ru">
+        <createTable tableName="t_operation_category" remarks="Таблица категорий операций">
+            <column name="id" type="BIGINT" remarks="Уникальный идентификатор категории операции">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_t_operation_category_id"/>
+            </column>
+            <column name="category" type="VARCHAR" remarks="Категория операции">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+    </changeSet>
 </databaseChangeLog>
